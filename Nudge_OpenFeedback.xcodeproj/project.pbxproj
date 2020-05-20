@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9280F6BF2474C7C1000040E6 /* CompletedModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9280F6BE2474C7C1000040E6 /* CompletedModal.swift */; };
 		928AC42B24748DA100D86D34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928AC42A24748DA100D86D34 /* AppDelegate.swift */; };
 		928AC42D24748DA200D86D34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928AC42C24748DA200D86D34 /* SceneDelegate.swift */; };
 		928AC42F24748DA200D86D34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928AC42E24748DA200D86D34 /* ContentView.swift */; };
@@ -15,6 +16,8 @@
 		928AC43724748DA600D86D34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 928AC43524748DA600D86D34 /* LaunchScreen.storyboard */; };
 		928AC44224748DA700D86D34 /* Nudge_OpenFeedbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928AC44124748DA700D86D34 /* Nudge_OpenFeedbackTests.swift */; };
 		928AC44D24748DA700D86D34 /* Nudge_OpenFeedbackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928AC44C24748DA700D86D34 /* Nudge_OpenFeedbackUITests.swift */; };
+		928AC45B2474936500D86D34 /* SurveyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928AC45A2474936500D86D34 /* SurveyDetailView.swift */; };
+		928AC45D247499DC00D86D34 /* OpenFeedbackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928AC45C247499DC00D86D34 /* OpenFeedbackDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9280F6BE2474C7C1000040E6 /* CompletedModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedModal.swift; sourceTree = "<group>"; };
 		928AC42724748DA100D86D34 /* Nudge_OpenFeedback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nudge_OpenFeedback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		928AC42A24748DA100D86D34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		928AC42C24748DA200D86D34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,8 @@
 		928AC44824748DA700D86D34 /* Nudge_OpenFeedbackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nudge_OpenFeedbackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		928AC44C24748DA700D86D34 /* Nudge_OpenFeedbackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nudge_OpenFeedbackUITests.swift; sourceTree = "<group>"; };
 		928AC44E24748DA700D86D34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		928AC45A2474936500D86D34 /* SurveyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailView.swift; sourceTree = "<group>"; };
+		928AC45C247499DC00D86D34 /* OpenFeedbackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFeedbackDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,9 @@
 				928AC42A24748DA100D86D34 /* AppDelegate.swift */,
 				928AC42C24748DA200D86D34 /* SceneDelegate.swift */,
 				928AC42E24748DA200D86D34 /* ContentView.swift */,
+				928AC45A2474936500D86D34 /* SurveyDetailView.swift */,
+				928AC45C247499DC00D86D34 /* OpenFeedbackDetailView.swift */,
+				9280F6BE2474C7C1000040E6 /* CompletedModal.swift */,
 				928AC43024748DA600D86D34 /* Assets.xcassets */,
 				928AC43524748DA600D86D34 /* LaunchScreen.storyboard */,
 				928AC43824748DA600D86D34 /* Info.plist */,
@@ -267,7 +276,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				928AC45D247499DC00D86D34 /* OpenFeedbackDetailView.swift in Sources */,
 				928AC42B24748DA100D86D34 /* AppDelegate.swift in Sources */,
+				928AC45B2474936500D86D34 /* SurveyDetailView.swift in Sources */,
+				9280F6BF2474C7C1000040E6 /* CompletedModal.swift in Sources */,
 				928AC42D24748DA200D86D34 /* SceneDelegate.swift in Sources */,
 				928AC42F24748DA200D86D34 /* ContentView.swift in Sources */,
 			);
