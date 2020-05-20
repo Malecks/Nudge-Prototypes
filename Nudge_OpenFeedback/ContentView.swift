@@ -20,7 +20,7 @@ struct ContentView: View {
                     VStack(spacing: 0) {
                         NudgeHeader()
                     
-                        Color(white:0.9)
+                        Color(.secondarySystemBackground)
                             .frame(height: 1.0)
                         
                         NudgeSubheader()
@@ -47,7 +47,7 @@ struct ContentView: View {
                     .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 2)
                 }
                 .navigationBarTitle("Nudge Feed")
-                .background(Color(white: 0.95))
+                .background(Color(.secondarySystemBackground))
                 .edgesIgnoringSafeArea(.bottom)
             }
             
@@ -74,7 +74,11 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+            ContentView()
+                .environment(\.colorScheme, .dark)
+        }
     }
 }
 
@@ -95,6 +99,7 @@ struct NudgeHeader: View {
                 
                 Text("25")
                     .fontWeight(.bold)
+                    .foregroundColor(.black)
             }
         }
         .padding()

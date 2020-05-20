@@ -18,21 +18,22 @@ struct CompletedModal: View {
                 Header()
                 ZStack {
                     RoundedRectangle(cornerRadius: 3, style: .continuous)
-                        .stroke(Color(white: 0.9), lineWidth: 1)
+                        .stroke(Color(.secondarySystemBackground), lineWidth: 1)
                         .frame(height: 60)
+                        
                     Text("Strongly Agree")
                         .fontWeight(.semibold)
                 }
                 .padding()
                 
-                Color(white: 0.9)
+                Color(.secondarySystemBackground)
                     .frame(height: 1)
                     .padding(.horizontal)
                 
                 Text("Thanks for participating in our Survey! Feedback like yours helps us shape the future of our content and company culture.")
                 .padding()
                 
-                Color(white: 0.9)
+                Color(.secondarySystemBackground)
                     .frame(height: 1)
                     .padding(.horizontal)
                 
@@ -44,15 +45,15 @@ struct CompletedModal: View {
                 .padding(.vertical)
 
             }
-            .background(Color.white)
+            .background(Color(.systemBackground))
             .overlay(
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(Color.white, lineWidth: 10)
+                    .stroke(Color(.systemBackground), lineWidth: 10)
             )
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
 
             .padding()
-                .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 2)
+            .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 2)
             Spacer()
         }
     }
@@ -60,7 +61,11 @@ struct CompletedModal: View {
 
 struct CompletedModal_Previews: PreviewProvider {
     static var previews: some View {
-        CompletedModal(showModal: Binding.constant(true))
+        Group {
+            CompletedModal(showModal: Binding.constant(true))
+            CompletedModal(showModal: Binding.constant(true))
+                .environment(\.colorScheme, .dark)
+        }
     }
 }
 
@@ -72,8 +77,10 @@ struct Header: View {
             VStack {
                 Text("75")
                     .font(Font.system(size: 45, weight: .heavy, design: .default))
+                    .foregroundColor(.black)
                 Text("Thanks for your feedback!")
                     .font(Font.system(size: 21, weight: .semibold, design: .default))
+                    .foregroundColor(.black)
             }
         }
         .frame(height: 200)

@@ -19,22 +19,7 @@ struct OpenFeedbackDetailView: View {
                 Text("This is a chance to add any additional thoughts you may have. Any answer you give will be submitted annonymously.")
                     .padding([.horizontal, .top])
                 
-                ZStack {
-                    Rectangle()
-                        .frame(height: 200)
-                        .foregroundColor(.white)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                .stroke(Color.gray, lineWidth: 1)
-                    )
-                    VStack {
-                        TextField("Write your thoughts here", text: $feedback)
-                            .padding()
-                        Spacer()
-                    }
-                    .frame(height: 200)
-                }
-                .padding()
+                FeedbackEntryField(text: $feedback, placeholder: "Write your thoughts here...", height: 200)
                 
                 Button(action: {
                     self.isRootActive.toggle()
@@ -58,5 +43,31 @@ struct OpenFeedbackDetailView_Previews: PreviewProvider {
         NavigationView {
             OpenFeedbackDetailView(isRootActive: Binding.constant(false))
         }
+    }
+}
+
+struct FeedbackEntryField: View {
+    
+    @Binding var text: String
+    var placeholder: String
+    var height: CGFloat
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .frame(height: height)
+                .foregroundColor(Color(.systemBackground))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .stroke(Color(.secondarySystemBackground), lineWidth: 1)
+            )
+            VStack {
+                TextField(placeholder, text: $text)
+                    .padding()
+                Spacer()
+            }
+            .frame(height: height)
+        }
+        .padding()
     }
 }
