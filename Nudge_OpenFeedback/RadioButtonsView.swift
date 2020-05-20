@@ -73,28 +73,18 @@ struct RadioButtonsView: View {
     
 }
 
-struct RadioButtonsView_Previews: PreviewProvider {
-    static var previews: some View {
-        RadioButtonsView(answerOptions: [
-            AnswerOption(id: 1, selected: false, title: "Strongly Agree"),
-            AnswerOption(id: 2, selected: false, title: "Agree"),
-            AnswerOption(id: 3, selected: false, title: "Neutral"),
-            AnswerOption(id: 4, selected: false, title: "Disagree"),
-            AnswerOption(id: 5, selected: false, title: "Strongly Disagree")
-        ])
-    }
-}
-
 struct SurveyButton: View {
     var selected: Bool
     var title: String
+    
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     
     var body: some View {
         ZStack {
             HStack(spacing: 10) {
                 ZStack {
                     Circle()
-                        .stroke(Color.black, lineWidth: 1.5)
+                        .stroke((colorScheme == .light ? Color.black : Color.white), lineWidth: 1.5)
                         .frame(width: 20, height: 20)
                     Circle()
                         .frame(width: 10, height: 10)
@@ -105,7 +95,7 @@ struct SurveyButton: View {
                 Text(title)
                     .font(Font.system(.subheadline))
                     .fontWeight(.semibold)
-                    .foregroundColor(.black)
+                    .foregroundColor(colorScheme == .light ? .black : .white)
                 
                 Spacer()
             }
@@ -116,5 +106,29 @@ struct SurveyButton: View {
                 .frame(height: 40)
         }
         .padding(.horizontal)
+    }
+}
+
+
+struct RadioButtonsView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            RadioButtonsView(answerOptions: [
+                AnswerOption(id: 1, selected: false, title: "Strongly Agree"),
+                AnswerOption(id: 2, selected: false, title: "Agree"),
+                AnswerOption(id: 3, selected: false, title: "Neutral"),
+                AnswerOption(id: 4, selected: false, title: "Disagree"),
+                AnswerOption(id: 5, selected: false, title: "Strongly Disagree")
+            ])
+            
+            RadioButtonsView(answerOptions: [
+                AnswerOption(id: 1, selected: false, title: "Strongly Agree"),
+                AnswerOption(id: 2, selected: false, title: "Agree"),
+                AnswerOption(id: 3, selected: false, title: "Neutral"),
+                AnswerOption(id: 4, selected: false, title: "Disagree"),
+                AnswerOption(id: 5, selected: false, title: "Strongly Disagree")
+            ])
+                .environment(\.colorScheme, .dark)
+        }
     }
 }

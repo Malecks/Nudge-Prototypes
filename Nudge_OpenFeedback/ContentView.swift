@@ -8,9 +8,17 @@
 
 import SwiftUI
 
+extension AnyTransition {
+  static var customTransition: AnyTransition {
+    let transition = AnyTransition.move(edge: .bottom)
+      .combined(with: .scale(scale: 0.2, anchor: .bottom))
+      .combined(with: .opacity)
+    return transition
+  }
+}
+
 struct ContentView: View {
     @State var isActive: Bool = false
-    
     @State var showModal: Bool = false
     
     var body: some View {
@@ -51,11 +59,17 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.bottom)
             }
             
-            CompletedModal(showModal: $showModal)
-                .background(Color.black.opacity(0.5))
-                .edgesIgnoringSafeArea(.all)
-                .opacity( showModal ? 1 : 0)
-                .animation(.easeInOut)
+            if showModal {
+                withAnimation {
+                    CompletedModal(showModal: $showModal)
+                        .background(Color.black.opacity(0.5))
+                        .edgesIgnoringSafeArea(.all)
+                        .animation(.easeOut)
+                        .transition(.customTransition)
+                        .opacity(showModal ? 1 : 0)
+                }
+            }
+
         }
     }
     
